@@ -77,7 +77,7 @@ impl<C: ConsumerContext + 'static> KafkaConsumer<C> {
         }
     }
 
-    pub fn stream(&self) -> MessageStream<'_> {
+    pub fn stream(&self) -> MessageStream<'_, C> {
         self.inner.stream()
     }
 
